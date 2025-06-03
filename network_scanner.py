@@ -29,80 +29,131 @@ class NetworkScanner:
         # Create output directory
         os.makedirs(output_dir, exist_ok=True)
         
-        # Default credentials database
-        self.default_creds = {
-            "BUFFALO": [
-                {"username": "admin", "password": "password"},
-                {"username": "root", "password": ""},
-                {"username": "admin", "password": "admin"}
-            ],
-            "Fortigate": [
-                {"username": "admin", "password": ""},
-                {"username": "admin", "password": "admin"},
-                {"username": "admin", "password": "password"}
-            ],
-            "IIS Windows": [
-                {"username": "administrator", "password": "password"},
-                {"username": "admin", "password": "admin"},
-                {"username": "iisadmin", "password": "password"}
-            ],
-            "Apache": [
-                {"username": "admin", "password": "admin"},
-                {"username": "root", "password": "password"},
-                {"username": "apache", "password": "apache"}
-            ],
-            "nginx": [
-                {"username": "admin", "password": "admin"},
-                {"username": "nginx", "password": "nginx"}
-            ],
-            "Tomcat": [
-                {"username": "tomcat", "password": "tomcat"},
-                {"username": "admin", "password": "admin"},
-                {"username": "manager", "password": "manager"}
-            ],
-            "pfSense": [
-                {"username": "admin", "password": "pfsense"},
-                {"username": "admin", "password": "admin"}
-            ],
-            "Ubiquiti": [
-                {"username": "ubnt", "password": "ubnt"},
-                {"username": "admin", "password": "admin"}
-            ],
-            "Netgear": [
-                {"username": "admin", "password": "password"},
-                {"username": "admin", "password": "admin"},
-                {"username": "admin", "password": "1234"}
-            ],
-            "Linksys": [
-                {"username": "admin", "password": "admin"},
-                {"username": "admin", "password": "password"},
-                {"username": "", "password": "admin"}
-            ],
-            "D-Link": [
-                {"username": "admin", "password": ""},
-                {"username": "admin", "password": "admin"},
-                {"username": "admin", "password": "password"}
-            ],
-            "TP-Link": [
-                {"username": "admin", "password": "admin"},
-                {"username": "admin", "password": "password"}
-            ],
-            "Cisco": [
-                {"username": "admin", "password": "admin"},
-                {"username": "cisco", "password": "cisco"},
-                {"username": "admin", "password": "password"}
-            ],
-            "default": [
-                {"username": "admin", "password": "admin"},
-                {"username": "admin", "password": "password"},
-                {"username": "admin", "password": ""},
-                {"username": "root", "password": "root"},
-                {"username": "root", "password": "password"},
-                {"username": "root", "password": ""},
-                {"username": "administrator", "password": "password"},
-                {"username": "user", "password": "user"}
-            ]
-        }
+# Default credentials database
+self.default_creds = {
+    "BUFFALO": [
+        {"username": "admin", "password": "password"},
+        {"username": "root", "password": ""},
+        {"username": "admin", "password": "admin"}
+    ],
+    "Fortigate": [
+        {"username": "admin", "password": ""},
+        {"username": "admin", "password": "admin"},
+        {"username": "admin", "password": "password"}
+    ],
+    "IIS Windows": [
+        {"username": "administrator", "password": "password"},
+        {"username": "admin", "password": "admin"},
+        {"username": "iisadmin", "password": "password"}
+    ],
+    "Apache": [
+        {"username": "admin", "password": "admin"},
+        {"username": "root", "password": "password"},
+        {"username": "apache", "password": "apache"}
+    ],
+    "nginx": [
+        {"username": "admin", "password": "admin"},
+        {"username": "nginx", "password": "nginx"}
+    ],
+    "Tomcat": [
+        {"username": "tomcat", "password": "tomcat"},
+        {"username": "admin", "password": "admin"},
+        {"username": "manager", "password": "manager"}
+    ],
+    "pfSense": [
+        {"username": "admin", "password": "pfsense"},
+        {"username": "admin", "password": "admin"}
+    ],
+    "Ubiquiti": [
+        {"username": "ubnt", "password": "ubnt"},
+        {"username": "admin", "password": "admin"}
+    ],
+    "Netgear": [
+        {"username": "admin", "password": "password"},
+        {"username": "admin", "password": "admin"},
+        {"username": "admin", "password": "1234"}
+    ],
+    "Linksys": [
+        {"username": "admin", "password": "admin"},
+        {"username": "admin", "password": "password"},
+        {"username": "", "password": "admin"}
+    ],
+    "D-Link": [
+        {"username": "admin", "password": ""},
+        {"username": "admin", "password": "admin"},
+        {"username": "admin", "password": "password"}
+    ],
+    "TP-Link": [
+        {"username": "admin", "password": "admin"},
+        {"username": "admin", "password": "password"}
+    ],
+    "Cisco": [
+        {"username": "admin", "password": "admin"},
+        {"username": "cisco", "password": "cisco"},
+        {"username": "admin", "password": "password"}
+    ],
+    "Juniper": [
+        {"username": "root", "password": "Juniper"},
+        {"username": "admin", "password": "admin"}
+    ],
+    "Polycom": [
+        {"username": "Polycom", "password": "456"}
+    ],
+    "Zyxel": [
+        {"username": "admin", "password": "1234"},
+        {"username": "admin", "password": "admin"}
+    ],
+    "MikroTik": [
+        {"username": "admin", "password": ""}
+    ],
+    "QNAP": [
+        {"username": "admin", "password": "admin"}
+    ],
+    "Dell iDRAC": [
+        {"username": "root", "password": "calvin"}
+    ],
+    "HP iLO": [
+        {"username": "Administrator", "password": "admin"},
+        {"username": "Administrator", "password": "password"}
+    ],
+    "Supermicro": [
+        {"username": "ADMIN", "password": "ADMIN"}
+    ],
+    "MongoDB": [
+        {"username": "admin", "password": "admin"},
+        {"username": "root", "password": ""}
+    ],
+    "MySQL": [
+        {"username": "root", "password": ""},
+        {"username": "root", "password": "root"},
+        {"username": "admin", "password": "admin"}
+    ],
+    "WordPress": [
+        {"username": "admin", "password": "admin"},
+        {"username": "admin", "password": "password"}
+    ],
+    "Joomla": [
+        {"username": "admin", "password": "admin"}
+    ],
+    "Drupal": [
+        {"username": "admin", "password": "admin"}
+    ],
+    "SNMP": [
+        {"community": "public"},
+        {"community": "private"}
+    ],
+    "default": [
+        {"username": "admin", "password": "admin"},
+        {"username": "admin", "password": "password"},
+        {"username": "admin", "password": ""},
+        {"username": "root", "password": "root"},
+        {"username": "root", "password": "password"},
+        {"username": "root", "password": ""},
+        {"username": "administrator", "password": "password"},
+        {"username": "user", "password": "user"}
+    ]
+}
+
 
     def log_debug(self, message):
         """Log debug messages if debug mode is enabled"""
