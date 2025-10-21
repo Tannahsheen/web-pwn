@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 2. Install WhatWeb (optional but recommended):
 \`\`\`bash
-# Ubuntu/Debian
+# Ubuntu/Debian/Kali
 sudo apt-get install whatweb
 
 # Or install from source
